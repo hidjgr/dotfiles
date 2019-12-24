@@ -1,0 +1,3 @@
+URxvt*scrollBar: false
+*.foreground: #FFFFFF
+*.background: #000000
