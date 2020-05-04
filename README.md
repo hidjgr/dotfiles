@@ -1,2 +1,2 @@
 # dotfiles
-Archlinux setup
+some config
