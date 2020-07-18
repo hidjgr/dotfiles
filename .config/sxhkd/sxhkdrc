@@ -1,10 +1,11 @@
-#
+
 # wm independent hotkeys
 #
 
 # terminal emulator
 super + Return
-	st -f 'Liberation Mono-10'
+	termite
+	#st -f 'Liberation Mono-10'
 
 # program launcher
 super + @space
@@ -36,7 +37,7 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
@@ -119,3 +120,17 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# change window layer
+super + alt + {u,i,o}
+	bspc node -l {above,normal,below}
+
+# change window gaps
+super + minus
+	bspc config window_gap $(($(bspc config window_gap)+10))
+
+super + equal
+	bspc config window_gap $(($(bspc config window_gap)-10))
+
+super + shift + equal
+	bspc config window_gap 0
